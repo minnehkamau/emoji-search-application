@@ -38,14 +38,19 @@
 
   function displayEmoji(emojiList) {
     try {
-      emojiContainer.innerHTML = ""; // clear the emojiContainer element
+      // clear the emojiContainer element
+      emojiContainer.innerHTML = ""; 
       emojiList.forEach((emoji) => {
         const emojiDiv = document.createElement("div");
-        emojiDiv.innerHTML = `
-        <p>${emoji.name}</p>
+        emojiDiv.innerHTML = 
+
+        //display the emoji, name, category and group
+        `
+        <p style="font-size: 70px;"> ${emoji.htmlCode}</p>
+        <p><b>${emoji.name}</p>
         <p>Category: ${emoji.category}</p>
         <p>Group: ${emoji.group}</p>
-        <p> ${emoji.htmlCode}</p>
+       
         `;
         emojiContainer.appendChild(emojiDiv);
       });
