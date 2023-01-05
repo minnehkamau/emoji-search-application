@@ -1,4 +1,14 @@
 # emoji-search-application
+This is a program that allows users to search for their favorite emojis. This is possible by searching using the emojiname, category or the group that they belong to. The main aim of the application is to allow users to be familiar with the emoji that they would like to incorporate in their conversations.
+
+
+# Project description
+ This applications takes the input of the user and displays emojis according to their search. The input can either be the emojiname, category or eithe the group. After writing your search input, click on the search button for the emojis to display.
+
+
+ This project applies HTML. CSS, and JavaScript technologies for it to be successful.
+
+
 
 
 
