@@ -1,0 +1,36 @@
+
+
+
+
+
+
+.page-header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-size: 70px;
+    
+
+    background-color: #ffc31e;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #1b1212;
+    padding: 25px 60px;
+    margin-bottom: 30px;
+
+    
+    
+}
+body{
+    background-color: #1f2428 !importan;
+}
+
+#button-addon2{
+
+background-color: #ffc31e;
+color: #1b1212;
+font-size: 30px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+   
