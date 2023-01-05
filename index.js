@@ -1,29 +1,67 @@
-document.addEventListener("DOMContentLoaded",()=>{
- getEmoji();
-})
+(() => {
+  let emojiList = []; // Declare emojiList as a global variable and initialize it to an empty array.
 
-const options = {
-	method: 'GET',
-	
-};
-function getEmoji(){
-fetch('https://emojihub.yurace.pro/api/all', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+  const options = {
+    method: "GET",
+  };
 
-}
+  const emojiContainer = document.getElementById("emoji-container");
 
-  
-  function showEmoji(data){
+  function getEmoji() {
+    fetch("https://emojihub.yurace.pro/api/all", options)
+      .then((response) => response.json())
+      .then((response) => {
+        // Save the API response in the emojiList variable.
+        emojiList = response;
+        displayEmoji(emojiList);
+      })
+      .catch((err) => {
+        console.error(err);
+        // display error message to user
+      });
+  }
 
-
-  const form = document.getElementById("emojisearch")
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    sendData();
+  document
+  .getElementById("search-button")
+  .addEventListener("click", function () {
+    const searchInput = document.getElementById("search-input").value;
+    // Filter the emojiList by checking if the name, category, or group of each emoji contains the search input.
+    const filteredEmojiList = emojiList.filter(
+      (emoji) =>
+        emoji.name.includes(searchInput) ||
+        emoji.category.includes(searchInput) ||
+        emoji.group.includes(searchInput)
+    );
+    displayEmoji(filteredEmojiList);
   });
 
 
-}
+  function displayEmoji(emojiList) {
+    try {
+      emojiContainer.innerHTML = ""; // clear the emojiContainer element
+      emojiList.forEach((emoji) => {
+        const emojiDiv = document.createElement("div");
+        emojiDiv.innerHTML = `
+        <p>${emoji.name}</p>
+        <p>Category: ${emoji.category}</p>
+        <p>Group: ${emoji.group}</p>
+        <p> ${emoji.htmlCode}</p>
+        `;
+        emojiContainer.appendChild(emojiDiv);
+      });
+    } catch (error) {
+      console.error(error);
+      // display error message to user
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // display loading indicator
+    getEmoji();
+  });
+})();
+
+  
+  
+  
+  
