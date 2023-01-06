@@ -1,23 +1,28 @@
 (() => {
-  let emojiList = []; // Declare emojiList as a global variable and initialize it to an empty array.
+  // Declare emojiList as a global variable and initialize it to an empty array.
+
+  let emojiList = []; 
 
   const options = {
     method: "GET",
   };
 
+  
+
   const emojiContainer = document.getElementById("emoji-container");
 
   function getEmoji() {
+    // fetching data from the Emoji API 
     fetch("https://emojihub.yurace.pro/api/all", options)
       .then((response) => response.json())
       .then((response) => {
-        // Save the API response in the emojiList variable.
+    // Save the API response in the emojiList variable.
         emojiList = response;
         displayEmoji(emojiList);
       })
       .catch((err) => {
         console.error(err);
-        // display error message to user
+    // display error message to user
       });
   }
 
@@ -36,15 +41,17 @@
   });
 
 
+
+
   function displayEmoji(emojiList) {
     try {
-      // clear the emojiContainer element
+    // clear the emojiContainer element
       emojiContainer.innerHTML = ""; 
       emojiList.forEach((emoji) => {
         const emojiDiv = document.createElement("div");
         emojiDiv.innerHTML = 
 
-        //display the emoji, name, category and group
+    //display the emoji, name, category and group
         `
         <p style="font-size: 70px;"> ${emoji.htmlCode}</p>
         <p><b>${emoji.name}</p>
@@ -59,6 +66,8 @@
       // display error message to user
     }
   }
+
+
 
   document.addEventListener("DOMContentLoaded", () => {
     // display loading indicator
