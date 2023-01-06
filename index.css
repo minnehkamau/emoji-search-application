@@ -15,10 +15,11 @@
     
 }
 body{
-    background-color: #FFFFF0;
+    background-color: #FFFFF0;font-variant-caps: 
 }
 
 .search{
+    /* styling the search input and search button*/
     display: flex;
     justify-content: center;
 }
