@@ -12,6 +12,10 @@ by searching using the emojiname, category or the group that they belong to. The
 
  This project applies HTML. CSS, and JavaScript technologies for it to be successful.
 
+ # project setup 
+
+I got to identify the emoji API from the github list of public APIs. I then created and cloned a private repository from Github. After that, you can create a README using touch from the terminal. You can also go directly to the VS code and create files. I created a html code and styled it with CSS. after that, I created index.js file where I focused on creating the javaScript code.
+
 
 
 
